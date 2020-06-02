@@ -1,4 +1,4 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2019-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # This file provides a registry of active, requested and historical UID
@@ -86,7 +86,7 @@ cdrom			-	19	baselayout
 dialout			-	20	acct
 dialout			-	20	baselayout	Historically removed from baselayout in [r2444](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/group?limit_changes=0&r1=2310&r2=2444&pathrev=2545), then reintroduced
 ftp			21	21	acct		Removed from baselayout in [r1475](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1474&r2=1475&pathrev=2545)
-sshd			22	22	user.eclass	Removed from baselayout in [r1476](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1475&r2=1476&pathrev=2545)
+sshd			22	22	acct		Removed from baselayout in [r1476](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1475&r2=1476&pathrev=2545)
 smmsp			25	-	baselayout-fbsd
 at			25	25	user.eclass	Removed from baselayout in [r1479](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1478&r2=1479&pathrev=2545)
 smtpd			25	25	user.eclass
@@ -106,6 +106,9 @@ gamestat		-	36	acct
 named			40	40	user.eclass	Removed from baselayout in [r1369](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1335&r2=1369&pathrev=2545)
 tor			43	43	acct
 mpd			45	-	acct
+openct			-	46	acct
+pcscd			47	47	acct
+docker			-	48	acct
 knot			53	53	acct
 tss			59	59	acct
 mysql			60	60	acct		Removed from baselayout in [r1335](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1326&r2=1335&pathrev=2545)
@@ -119,7 +122,7 @@ dialer			-	68	baselayout-fbsd
 network			-	69	baselayout-fbsd
 postgres		70	70	user.eclass	Moved out of baselayout in [r1861](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1572&r2=1861&pathrev=2545)
 dovenull		74	74	acct
-redis			75	75	user.eclass
+redis			75	75	acct
 dovecot			76	76	acct
 qemu			77	77	acct
 kvm			-	78	acct
@@ -130,6 +133,7 @@ nginx			82	82	requested
 nut			84	84	user.eclass	Removed from baselayout in [r1862](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1861&r2=1862&pathrev=2545)
 cyrus			85	-	historical	Removed from baselayout in [r1326](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=1319&r2=1326&pathrev=2545)
 usb			-	85	baselayout
+usb			-	85	acct
 nullmail		88	88	user.eclass
 vpopmail		89	89	acct		Removed from baselayout in [r1319](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=916&r2=1319&pathrev=2545)
 partimag		91	91	user.eclass
@@ -143,24 +147,29 @@ users			-	100	baselayout-fbsd
 messagebus		101	101	acct
 polkitd			102	102	acct
 plex			103	103	acct
-lpadmin			-	106	user.eclass
+lpadmin			-	106	acct
 rpc			111	111	historical	Used by net-nds/portmap, removed in [36e60cce11d7](https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=36e60cce11d780582196c42d6b692897455d7a27)
 unifi			113	113	acct
+snapserver		114	114	requested
+snapclient		115	115	requested
 mythtv			117	117	acct
 murmur			122	122	acct
 ntp			123	123	acct
+fetchmail		124	124	acct
 rtkit			133	133	acct
 shellinaboxd		139	139	acct
 owfs			150	150	user.eclass	Ebuild allows overriding username.
+rbldns			153	153	acct
 stapusr			-	156	user.eclass
 stapsys			-	157	user.eclass
 stapdev			-	158	user.eclass
 inspircd		167	167	acct
 transmission		169	169	acct
-munin			177	177	user.eclass
-munin-async             178     -       user.eclass
+munin			177	177	acct
+munin-async		178	-	acct
 elasticsearch		183	183	acct
 pdnsd			184	184	acct
+haproxy			188	188	acct
 systemd-journal		-	190	acct
 systemd-journal-remote	191	191	acct
 systemd-network		192	192	acct
@@ -185,11 +194,13 @@ uptimed			220	220	acct
 gkrellmd		221	221	acct
 msmtpd			222	222	acct
 nsd			223	223	acct
+turnserver		235	235	acct
 tox			236	236	acct
 rspamd			237	237	acct
 scponly			239	239	requested
 distcc			240	-	user.eclass
 asterisk		242	242	acct
+locate			-	245	acct
 slocate			-	245	historical	Removed from baselayout in [r1328](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/group?limit_changes=0&r1=1319&r2=1328&pathrev=2545)
 portage			250	250	baselayout
 portage			250	250	baselayout-fbsd
@@ -202,38 +213,116 @@ spire			271	271	acct
 plugdev			-	272	acct
 bacula			273	273	acct
 dnsmasq_exporter	274	274	acct
+dnsmasq			275	275	acct
+bind_exporter		276	276	acct
 netdata			290	290	acct
 x2gouser		291	291	acct
 x2goprint		292	292	acct
+dhcp			300	300	acct
+squid			301	301	acct
+lighttpd		302	302	acct
+dhcpcd			303	303	acct
+vboxusers		-	304	acct
+vboxguest		305	305	acct
+vboxsf			-	306	acct
+clair			307	307	acct
+lldpd			315	315	acct
+exabgp			316	316	acct
 openntpd		321	321	acct
-amavis			333	333	requested
+ossec			330	330	acct
+ossecm			331	330	acct
+ossecr			332	330	acct
+amavis			333	333	acct
 opendkim		334	334	acct
 epmd			335	335	acct
-sqlgrey			336	336	requested
+sqlgrey			336	336	acct
+spamd			337	337	acct
 stunnel			341	341	acct
 dnscrypt-proxy		353	353	acct
+octoprint		368	368	acct
+buildbot		393	393	acct		Used by dev-util/buildbot, dev-util/buildbot-worker
+openvpn			394	394	acct
+svn			399	-	acct		Used by dev-vcs/subversion[-apache2]
+svnusers		-	399	acct		Used by dev-vcs/subversion[-apache2]
 slurm			400	400	acct
+monitorix		401	401	acct
+lxd			-	402	acct
+bareos			403	403	acct
+simplevirt		-	404	acct
 guest			405	-	historical	Removed from baselayout in [r889](https://sources.gentoo.org/cgi-bin/viewvc.cgi/baselayout/trunk/share.Linux/passwd?limit_changes=0&r1=286&r2=889&pathrev=2545)
 utmp			-	406	acct
 utmp			-	406	baselayout
+bitlbee			407	407	acct
+consul-template		408	408	acct
+gpib			-	409	acct		Used by sci-libs/linux-gpib
+vault			410	410	acct
+consul			411	411	acct
+atheme-services		412	412	acct
+ngircd			413	413	acct
+dnsdist			414	414	acct
+cyrus			415	-	acct
+gluster			416	416	acct
+anope			417	417	acct
+usbmux			418	-	acct
+wesnoth			419	419	acct
+davfs2			420	420	acct		Used by net-fs/davfs2
+znc			421	421	requested
+abrt			422	422	acct
+pdns			423	423	acct		Used by net-dns/pdns
+quagga			424	424	acct
+kafka			425	425	acct
+etcd			426	426	acct
+cadvisor		427	427	acct
+telegraf		428	428	acct
+gerbera			429	429	acct
+prometheus		430	430	acct
+netbox			431	431	acct
+kube-apiserver		432	432	acct
+kube-controller-manager	433	433	acct
+kube-scheduler		434	434	acct
+clamav			435	435	acct
+nagios			436	436	acct
 automx2			437	437	acct
 milter-regex		438	438	acct
 ldap			439	439	user.eclass
 collectd		440	440	requested
+memcached		441	441	acct
+cinder			442	442	acct
+glance			443	443	acct
+heat			444	444	acct
+keystone		445	445	acct
+neutron			446	446	acct
+nova			447	447	acct
+placement		448	448	acct
+swift			449	449	acct
 firebird		450	450	user.eclass
 redmine			451	451	acct
-vdr				452	452	acct
-vdradmin		453	453	requested
+vdr			452	452	requested
+vdradmin		453	453	acct		Used by www-misc/vdradmin-am
 deluge			454	454	acct
+puppet			455	455	acct
+puppetdb		456	456	acct
+icinga			457	457	acct
+icingacmd		-	458	acct
+node_exporter		459	459	acct
 mogilefs		460	-	user.eclass
-amule			468	468	requested
+ttrssd			461	461	acct
+tvheadend		462	-	acct
+supervisor		-	463	acct
+airdcppd		464	464	requested
+tsm			-	465	acct		Used by app-backup/tsm
+ippl			465	-	acct		Used by net-analyzer/ippl
+rstudio-server		466	466	acct		Used by sci-mathematics/rstudio
+geneweb			467	467	acct
+amule			468	468	acct
 xrootd			469	469	acct
 i2pd			470	470	acct
 i2p			471	471	acct
+quassel			472	472	acct
 jenkins			473	473	requested
 varnish			474	474	acct
 sogo			475	475	acct
-stubby			476	476	requested	Used by net-dns/getdns
+stubby			476	476	acct		Used by net-dns/getdns
 suricata		477	477	acct
 graylog			478	478	acct
 openrct2		479	479	acct
@@ -275,4 +364,4 @@ nobody			65534	65534	baselayout-fbsd
 # tab-width: 8
 # End:
 
-# vim:se ts=8 sts=0 tw=0 nowrap :
+# vim:se ts=8 sts=0 tw=0 nowrap noexpandtab:
